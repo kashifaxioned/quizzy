@@ -9,14 +9,11 @@ export default function Home() {
         <p className="mt-6 text-4xl">Test your knowledge here</p>
         <div className="flex flex-col translate-y-1/4">
           <Link
-            className="py-5 px-10 border-box text-4xl uppercase cursor-pointer transition duration-75 ease-in hover:skew-y-6"
+            className="py-5 px-10 mt-10 border-box text-4xl uppercase cursor-pointer transition duration-75 ease-in hover:skew-y-6"
             to="/question1"
           >
             start
           </Link>
-          <span className="mt-5 py-5 px-10 border-box text-4xl uppercase cursor-pointer transition duration-75 ease-in hover:-skew-y-6">
-            rules
-          </span>
         </div>
       </div>
     </div>

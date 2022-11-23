@@ -6,7 +6,6 @@ import Questions from "./Questions/Questions";
 
 export default function App() {
   const { data, isSuccess } = useGetQuestionsQuery();
-
   return (
     <div>
       <Router>
