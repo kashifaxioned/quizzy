@@ -13,7 +13,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           {isSuccess &&
             data.results.map((x, i) => {
-              return <Route path={`question${i+1}`} key={i} element={<Questions key={i} data={x} num={i+1}/>} />;
+              return <Route path={`question-${i+1}`} key={i} element={<Questions key={i} data={x} num={i+1}/>} />;
             })}
         </Routes>
       </Router>
