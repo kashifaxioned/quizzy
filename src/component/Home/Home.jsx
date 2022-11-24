@@ -6,7 +6,7 @@ import { reset } from "../../features/numOfCorrectAnswer/numOfCorrectAnswerSlice
 export default function Home() {
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(reset(0))
+    dispatch(reset())
   })
   return (
     <div className="font-rubik bg-grey text text-gold border-box">
