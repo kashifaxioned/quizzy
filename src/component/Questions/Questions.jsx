@@ -1,15 +1,12 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import he from "he";
-import { Link, useNavigate, Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { increment } from "../../features/numOfCorrectAnswer/numOfCorrectAnswerSlice";
 
 export default function Questions(props) {
 
   const state = useSelector(state => state.correctAnswer)
-
-  console.log(state)
-  console.log(props.num)
 
   const data = props.data;
 
@@ -22,8 +19,6 @@ export default function Questions(props) {
       ),
     [data]
   );
-
-  const navigate = useNavigate()
 
   const clickedContainer = useRef();
 
@@ -65,7 +60,7 @@ export default function Questions(props) {
         );
       }
     }
-  }, [isChecked]);
+  }, [isChecked, dispatch]);
 
   return (
     <>
