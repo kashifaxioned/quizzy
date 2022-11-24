@@ -65,12 +65,12 @@ export default function Questions(props) {
   return (
     <>
       {props.num - 1 === state ?  <div className="font-rubik bg-grey text text-gold border-box overflow-hidden select-none">
-      <div className="container mx-auto min-h-[100vh] text-center translate-y-1/4 flex-col">
-        <h3 className="text-6xl">Question no {props.num}</h3>
-        <p className="mt-12 text-3xl py-8 px-12 border border-gold rounded-full text-left">
+      <div className="container mx-auto min-h-[100vh] text-center translate-y-[20%] max-xl:translate-y-[17%] flex-col">
+        <h3 className="text-6xl max-xl:text-4xl">Question no {props.num}</h3>
+        <p className="mt-12 text-3xl max-xl:text-xl py-8 px-12 border border-gold rounded-full text-left">
           {he.decode(data.question)}
         </p>
-        <div className="mt-10 flex flex-wrap justify-between">
+        <div className="mt-10 flex flex-wrap max-sm:flex-col justify-between">
           {optionsArr.map((x, i) => {
             return x === data.correct_answer ? (
               (correctAnswer.current = (
@@ -79,7 +79,7 @@ export default function Questions(props) {
                   onClick={handleClick}
                   className={`py-6 basis-[48%] ${i < 2 && "mb-10"} ${
                     isChecked && "bg-green text-black pointer-events-none"
-                  } text-2xl border border-gold cursor-pointer`}
+                  } text-2xl max-xl:text-xl border border-gold cursor-pointer`}
                 >
                   {he.decode(x)}
                 </span>
@@ -92,7 +92,7 @@ export default function Questions(props) {
                   isChecked && "pointer-events-none"
                 } ${
                   i < 2 && "mb-10"
-                } text-2xl border border-gold cursor-pointer`}
+                } text-2xl max-xl:text-xl border border-gold cursor-pointer`}
               >
                 {he.decode(x)}
               </span>
