@@ -65,9 +65,9 @@ export default function Questions(props) {
   return (
     <>
       {props.num - 1 === state ?  <div className="font-rubik bg-grey text text-gold border-box overflow-hidden select-none">
-      <div className="container mx-auto min-h-[100vh] text-center translate-y-[20%] max-xl:translate-y-[17%] flex-col">
+      <div className="container mx-auto min-h-[100vh] text-center translate-y-[17%] max-xl:translate-y-[10%] flex-col">
         <h3 className="text-6xl max-xl:text-4xl">Question no {props.num}</h3>
-        <p className="mt-12 text-3xl max-xl:text-xl py-8 px-12 border border-gold rounded-full text-left">
+        <p className="mt-12 text-3xl max-xl:text-xl py-5 px-12 border border-gold rounded-full text-left">
           {he.decode(data.question)}
         </p>
         <div className="mt-10 flex flex-wrap max-sm:flex-col justify-between">
@@ -75,9 +75,10 @@ export default function Questions(props) {
             return x === data.correct_answer ? (
               (correctAnswer.current = (
                 <span
+                  ref={correctAnswer}
                   key={i}
                   onClick={handleClick}
-                  className={`py-6 basis-[48%] ${i < 2 && "mb-10"} ${
+                  className={`py-4 basis-[48%] ${i < 2 && "mb-10"} ${
                     isChecked && "bg-green text-black pointer-events-none"
                   } text-2xl max-xl:text-xl border border-gold cursor-pointer`}
                 >
@@ -88,7 +89,7 @@ export default function Questions(props) {
               <span
                 key={i}
                 onClick={handleClick}
-                className={`py-6 basis-[48%] ${
+                className={`py-4 basis-[48%] ${
                   isChecked && "pointer-events-none"
                 } ${
                   i < 2 && "mb-10"
@@ -102,7 +103,7 @@ export default function Questions(props) {
         {isClicked && (
           <span
             onClick={() => setChecked(true)}
-            className="py-5 px-10 mt-12 border border-gold text-2xl cursor-pointer uppercase inline-block text-right transition-all durtion-100 ease-in hover:bg-orange hover:text-grey"
+            className="py-3 px-10 mt-12 border border-gold text-2xl cursor-pointer uppercase inline-block text-right transition-all durtion-100 ease-in hover:bg-orange hover:text-grey"
           >
             submit
           </span>
@@ -111,7 +112,7 @@ export default function Questions(props) {
         {isAnswerCorrect && (
           <Link
             to={`/question-${props.num + 1}`}
-            className="py-5 px-10 mt-12 border border-gold text-2xl cursor-pointer uppercase inline-block text-right transition-all durtion-100 ease-in hover:bg-orange hover:text-grey"
+            className="py-3 px-10 mt-12 border border-gold text-2xl cursor-pointer uppercase inline-block text-right transition-all durtion-100 ease-in hover:bg-orange hover:text-grey"
           >
             next
           </Link>
@@ -119,7 +120,7 @@ export default function Questions(props) {
         {!isAnswerCorrect && isChecked && (
           <Link
             to={`/`}
-            className="py-5 px-10 mt-12 border border-gold text-2xl cursor-pointer uppercase inline-block text-right transition durtion-100 ease-in hover:bg-orange hover:text-grey"
+            className="py-3 px-10 mt-12 border border-gold text-2xl cursor-pointer uppercase inline-block text-right transition durtion-100 ease-in hover:bg-orange hover:text-grey"
           >
             go to home
           </Link>
