@@ -9,7 +9,7 @@ export default function Home() {
     dispatch(reset())
   })
   return (
-    <div className="font-rubik bg-grey text text-gold border-box">
+    <div>
       <div className="container mx-auto min-h-[100vh] flex items-center justify-center flex-col">
         <h2 className="capitalize text-8xl">quizzy pizzy</h2>
         <p className="mt-6 text-4xl">Test your knowledge here</p>
