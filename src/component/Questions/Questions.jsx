@@ -64,7 +64,7 @@ export default function Questions(props) {
 
   return (
     <>
-      {props.num - 1 === state ?  <div className="font-rubik bg-grey text text-gold border-box overflow-hidden select-none">
+      {props.num - 1 === state ?  <div className="overflow-hidden select-none">
       <div className="container mx-auto min-h-[100vh] text-center translate-y-[17%] max-xl:translate-y-[10%] flex-col">
         <h3 className="text-6xl max-xl:text-4xl">Question no {props.num}</h3>
         <p className="mt-12 text-3xl max-xl:text-xl py-5 px-12 border border-gold rounded-full text-left">
